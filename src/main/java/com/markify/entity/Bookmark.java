@@ -1,3 +1,6 @@
+package com.markify.entity;
+import jakarta.persistence.*;
+
 @Entity
 @Table(name="bookmark")
 public class Bookmark{
@@ -6,11 +9,11 @@ public class Bookmark{
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name=User.id)
+    @JoinColumn(name="user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name=Course.id)
+    @JoinColumn(name="course_id")
     private Course course;
 
     private String notes;

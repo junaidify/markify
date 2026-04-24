@@ -1,3 +1,7 @@
+package com.markify.entity;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+
 @Entity
 @Table(name = "users")
 public class User{
@@ -9,6 +13,7 @@ public class User{
     @Column(unique=true, nullable=false)
     @Email
     private String email;
+
     private String password;
 
 
@@ -32,8 +37,8 @@ public class User{
         return password;
     }
 
-    public long getUserId() {
-        return userId;
+    public Long getUserId() {
+        return id;
     }
 
     public void setName(String name) {

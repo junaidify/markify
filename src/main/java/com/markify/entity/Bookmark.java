@@ -2,7 +2,6 @@ package com.markify.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="bookmark")
 public class Bookmark{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

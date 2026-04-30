@@ -17,7 +17,7 @@ public class Course{
     protected Course(){};
 
     public Course(String name, User authorId){
-        this.name = name;
+        this.name = name.trim();
         this.authorId = authorId;
     }
 

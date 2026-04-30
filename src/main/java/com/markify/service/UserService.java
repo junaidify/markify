@@ -35,8 +35,13 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    public void deleteUser(Long id){
-         userRepository.deleteById(id);
+    public String deleteUser(String email){
+         User user = userRepository.findByEmail(email).
+                 orElseThrow(() -> new RuntimeException("Author doesn't exist"));
+
+         userRepository.deleteById(user.getId());
+
+         return "Author deleted successfully.";
     }
 
 }
